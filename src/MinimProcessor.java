@@ -25,7 +25,7 @@ public class MinimProcessor extends ProcessingFrameWrapper {
 	 */
 	@Override
 	public void draw() {
-		int bufferSize = groove.bufferSize() - 1; // gr��e des buffers
+		int bufferSize = groove.bufferSize() - 1; // groesse des buffers
 
 		AudioBuffer leftAudio = groove.left; // gibt dir mit .get(index) den
 												// float Wert an der Stelle
