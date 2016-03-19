@@ -12,7 +12,7 @@ public class MinimProcessor extends ProcessingFrameWrapper {
 	@Override
 	public void setup() {
 		minim = new Minim(this);
-		groove = minim.loadFile("groove.mp3", 512); // hier das file angeben
+		groove = minim.loadFile("groove.mp3", 1024); // hier das file angeben
 														// und wie viel bytes
 														// nacheinander
 														// eingelesen werden
