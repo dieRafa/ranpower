@@ -20,7 +20,7 @@ public class Main {
 
 		JFrame jframe = p.getJFrame();
 		SwingUtilities.invokeLater(() -> {
-			jframe.setSize(new Dimension(500, 400));
+			jframe.setSize(new Dimension(500, 500));
 			jframe.setLocationRelativeTo(null);
 			try {
 				p.getCanvas().requestFocus();
