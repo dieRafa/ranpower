@@ -9,7 +9,11 @@ import ddf.minim.AudioBuffer;
 
 public class LineCreator implements IFilter {
 	// private static ExecutorService threadHandler = Executors
-	// .newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+	// .newFixedThreadPool(2); // maybe use
+	// Runtime.getRuntime().availableProcessors()
+
+	public static final int PARAM1 = 13; // hat irgendwie einfluss darauf, wie
+											// viel schwarz im bild ist
 
 	@Override
 	public void compute(PImage image, int bufferSize, AudioBuffer left,
@@ -26,20 +30,14 @@ public class LineCreator implements IFilter {
 				leftIntK = leftIntK < 0 ? leftIntK * -1 : leftIntK;
 				rightIntK = rightIntK < 0 ? rightIntK * -1 : rightIntK;
 
-				int red = leftIntK;
-				int green = rightIntI;
-				int blue = (leftIntI + rightIntK) / 2;
+				int mul = leftIntI * leftIntK;
 
-				if ((leftIntI * leftIntK) % 2 == 0) {
-					red = leftIntK;
-					green = rightIntI;
-					blue = (leftIntI + rightIntK) / 2;
-				} else {
-					red = leftIntI;
-					green = rightIntK;
-					blue = (leftIntK + rightIntI) / 2;
+				if (mul != 0 && mul % PARAM1 == 0) {
+					int red = leftIntK;
+					int green = rightIntI;
+					int blue = (leftIntI + rightIntK) / 2;
+					image.set(i, k, new Color(red, green, blue).getRGB());
 				}
-				image.set(i, k, new Color(red, green, blue).getRGB());
 			}
 		}
 	}

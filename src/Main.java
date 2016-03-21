@@ -12,6 +12,7 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
+
 public class Main {
 
 	public static void main(String[] args) throws Exception {
@@ -20,7 +21,7 @@ public class Main {
 
 		JFrame jframe = p.getJFrame();
 		SwingUtilities.invokeLater(() -> {
-			jframe.setSize(new Dimension(500, 500));
+			jframe.setSize(new Dimension(400, 400));
 			jframe.setLocationRelativeTo(null);
 			try {
 				p.getCanvas().requestFocus();
